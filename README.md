@@ -6,4 +6,42 @@
 |  __/  __/ (_| | | | | |_| | |_\__ \
 |_|   \___|\__,_|_| |_|\__,_|\__|___/
 ```
-An exchange community
+# Peanuts
+Peanuts is an open-source project for exchange community.
+
+# Tasklist
+- [x] Create github project
+- [x] Add license
+- [ ] Initialize SpringBoot project
+- [ ] Add dependence
+- [ ] Integrate database
+- [ ] Add CI scripts for build
+- [ ] Development
+  - [ ] common function
+    - [ ] caching function
+    - [ ] view counting function
+    - [ ] log collecting function 
+    - [ ] authentication[jwt] function
+    - [ ] repositories for diffrent databases(maybe tables)
+    - [ ] common utils
+  - [ ] public apis[GET]
+    - [ ] article apis
+    - [ ] comment apis
+    - [ ] category apis
+    - [ ] search apis
+    - [ ] user information apis
+  - [ ] admin apis[POST,PUT,DELETE]
+    - [ ] login apis
+    - [ ] password apis
+    - [ ] article admin apis
+    - [ ] comment admin apis
+    - [ ] category admin apis
+    - [ ] user information api
+  - [ ] CI/CD script
+    - GitHub App CI/CD
+    - AWS Pipeline
+    - AWS Website
+  - [ ] Frontend
+    - see also [peanuts-front](https://github.com/wangzhenhui1992/peanuts-front)
+  - [ ] User Guide
+  - [ ] Developer Guide
