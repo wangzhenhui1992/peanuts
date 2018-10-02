@@ -16,6 +16,14 @@ Peanuts is an open-source project for exchange community.
 - [ ] Add dependence
 - [ ] Integrate database
 - [ ] Add CI scripts for build
+- [ ] AWS Environment
+  - [ ] EC2
+  - [ ] S3
+  - [ ] ElasticSearch
+  - [ ] ElasticCache[Redis]
+  - [ ] RDB
+  - [ ] CodeDeploy
+  - [ ] CodePipeline
 - [ ] Development
   - [ ] common function
     - [ ] caching function
@@ -37,11 +45,9 @@ Peanuts is an open-source project for exchange community.
     - [ ] comment admin apis
     - [ ] category admin apis
     - [ ] user information api
-  - [ ] CI/CD script
-    - GitHub App CI/CD
-    - AWS Pipeline
-    - AWS Website
   - [ ] Frontend
     - see also [peanuts-front](https://github.com/wangzhenhui1992/peanuts-front)
+  - [ ] CI/CD scripts
   - [ ] User Guide
   - [ ] Developer Guide
+  
