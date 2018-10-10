@@ -12,44 +12,48 @@
 Peanuts is an open-source project for exchange community.
 
 # Tasklist
-- [x] Create github project
-- [x] Add license
-- [ ] Initialize SpringBoot project
-- [ ] Add dependence
-- [ ] Integrate database
-- [ ] Add CI scripts for build
-- [ ] AWS Environment
-  - [ ] EC2
-  - [ ] S3
-  - [ ] ElasticSearch
-  - [ ] ElasticCache[Redis]
-  - [ ] RDB
-  - [ ] CodeDeploy
-  - [ ] CodePipeline
-- [ ] Development
-  - [ ] common function
-    - [ ] caching function
-    - [ ] view counting function
-    - [ ] log collecting function 
-    - [ ] authentication[jwt] function
-    - [ ] repositories for diffrent databases(maybe tables)
-    - [ ] common utils
-  - [ ] public apis[GET]
-    - [ ] article apis
-    - [ ] comment apis
-    - [ ] category apis
-    - [ ] search apis
-    - [ ] user information apis
-  - [ ] admin apis[POST,PUT,DELETE]
-    - [ ] login apis
-    - [ ] password apis
-    - [ ] article admin apis
-    - [ ] comment admin apis
-    - [ ] category admin apis
-    - [ ] user information api
-  - [ ] Frontend
-    - see also [peanuts-front](https://github.com/wangzhenhui1992/peanuts-front)
-  - [ ] CI/CD scripts
-  - [ ] User Guide
-  - [ ] Developer Guide
-  
+- [x] 1-Create github project
+- [x] 2-Add license
+- [ ] 3-Initialize SpringBoot project
+- [ ] 4-Add dependence
+- [ ] 5-Integrate database
+- [ ] 6-CICD
+  - [ ] 6.1-Add CI scripts for build
+  - [ ] 6.2-CI/CD scripts for deploy
+- [ ] 7-AWS Environment
+  - [ ] 7.1-EC2
+  - [ ] 7.2-S3
+  - [ ] 7.3-ElasticSearch
+  - [ ] 7.4-ElasticCache[Redis]
+  - [ ] 7.5-RDB
+  - [ ] 7.6-CloudFront
+  - [ ] 7.7-CodeDeploy
+  - [ ] 7.8-CodePipeline
+- [ ] 8-Local Environment
+  - [ ] 8.1-Docker
+- [ ] 9-Development
+  - [ ] 9.1-common function
+    - [ ] 9.1.1-caching function
+    - [ ] 9.1.2-view counting function
+    - [ ] 9.1.3-log collecting function 
+    - [ ] 9.1.4-authentication[jwt] function
+    - [ ] 9.1.5-repositories for diffrent databases(maybe tables)
+    - [ ] 9.1.6-common utils
+  - [ ] 9.2-public apis[GET]
+    - [ ] 9.2.1-article apis
+    - [ ] 9.2.2-comment apis
+    - [ ] 9.2.3-category apis
+    - [ ] 9.2.4-search apis
+    - [ ] 9.2.5-user information apis
+  - [ ] 9.3-admin apis[POST,PUT,DELETE]
+    - [ ] 9.3.1-login apis
+    - [ ] 9.3.2-password apis
+    - [ ] 9.3.3-article admin apis
+    - [ ] 9.3.4-comment admin apis
+    - [ ] 9.3.5-category admin apis
+    - [ ] 9.3.6-user information api
+  - [ ] 9.4-Frontend
+    - see also [peanuts-front](https://github.com/wangzhenhui1992/peanuts-front)  
+- [ ] 10-Guide
+  - [ ] 10.1-User Guide
+  - [ ] 10.2-Developer Guide
