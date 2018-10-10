@@ -1,11 +1,12 @@
 # What will be used?
 - Frontend
-  - Angular
-  - Bootstrap
-  - Font-Awesome
+  - Angular 6
+  - Bootstrap 4
+  - Font-Awesome 5
 - Backend
-  - Java
-  - SpringBoot
+  - Java 8
+  - SpringBoot 2
+  - SpringData
   - Redis
   - ElasticSearch
   - MySQL or H2
