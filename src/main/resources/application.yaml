@@ -1,0 +1,9 @@
+spring:
+  profiles:
+    active:
+    - develop
+  application:
+    name: peanuts-community
+  jpa:
+    hibernate:
+      ddl-auto: update
