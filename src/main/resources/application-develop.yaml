@@ -1,11 +1,17 @@
+server:
+  port: 8080
 spring:
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
   datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/mysql?useSSL=false&useUnicode=true&characterEncoding=UTF-8
+    username: root
+    password: my-secret-pw
     druid:
-      type: com.alibaba.druid.pool.DruidDataSource
-      driver-class-name: org.h2.Driver
-      url: c:\\h2\\db\\taskinfodb
-      username: dev-user
-      password: dev-password
       initial-size: 5
       min-idle: 5
       max-active: 20
@@ -34,3 +40,4 @@ spring:
       filter:
         stat:
           log-slow-sql: true
+      default-auto-commit: true
