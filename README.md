@@ -14,9 +14,9 @@ Peanuts is an open-source project for exchange community.
 # Tasklist
 - [x] 1-Create github project
 - [x] 2-Add license
-- [ ] 3-Initialize SpringBoot project
-- [ ] 4-Add dependence
-- [ ] 5-Integrate database
+- [x] 3-Initialize SpringBoot project
+- [x] 4-Add dependence
+- [x] 5-Integrate database
 - [ ] 6-CICD
   - [ ] 6.1-Add CI scripts for build
   - [ ] 6.2-CI/CD scripts for deploy
