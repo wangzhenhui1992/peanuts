@@ -2,12 +2,14 @@ package com.peanuts.community;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.PropertySource;
 /**
  * Peanuts Application
  * @author wangzhenhui1992
  * @since 2018/10/30
  */
 @SpringBootApplication
+@PropertySource("application.yaml")
 public class PeanutsApplication {
 
     public static void main(String[] args) {

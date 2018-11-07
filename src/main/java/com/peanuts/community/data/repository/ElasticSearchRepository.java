@@ -2,8 +2,8 @@ package com.peanuts.community.data.repository;
 
 import java.io.Serializable;
 
+import org.springframework.data.elasticsearch.repository.ElasticsearchRepository;
 import org.springframework.data.repository.NoRepositoryBean;
-import org.springframework.data.repository.PagingAndSortingRepository;
 
 import com.peanuts.community.data.entity.ElasticSearchEntity;
 
@@ -17,6 +17,6 @@ import com.peanuts.community.data.entity.ElasticSearchEntity;
  */
 @NoRepositoryBean
 public interface ElasticSearchRepository<T extends ElasticSearchEntity, E extends Serializable>
-        extends PagingAndSortingRepository<T, E> {
+        extends ElasticsearchRepository<T, E> {
 
 }

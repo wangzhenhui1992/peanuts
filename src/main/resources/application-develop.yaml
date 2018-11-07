@@ -5,39 +5,32 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: true
-  datasource:
-    type: com.alibaba.druid.pool.DruidDataSource
-    driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/mysql?useSSL=false&useUnicode=true&characterEncoding=UTF-8
-    username: root
-    password: my-secret-pw
+peanuts:
+  data:
+    rdb:
+      driver-class-name: com.mysql.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/mysql?useSSL=false&useUnicode=true&characterEncoding=UTF-8
+      username: root
+      password: my-secret-pw
+    redis:
+      host: localhost
+      port: 6379
+      database: 0
+      password: null
+      timeout: 5
+    elasticsearch:
+      cluster: elasticsearch
+      nodes:
+      - host: localhost
+        port: 9200
+        scheme: http
+#      ssl:
+#        username: null
+#        password: null
+#        key-store-name: null
+#        key-store-file-path: null
+#        key-store-password: null
     druid:
-      initial-size: 5
-      min-idle: 5
-      max-active: 20
-      max-wait: 30000
-      time-between-eviction-runs-millis: 60000
-      min-evictable-idle-time-millis: 300000
-      validation-query: select '1' from dual
-      test-while-idle: true
-      test-on-borrow: false
-      test-on-return: false
-      pool-prepared-statements: true
-      max-open-prepared-statements: 20
-      max-pool-prepared-statement-per-connection-size: 20
-      filters: stat,wall
-      aop-patterns: com.springboot.servie.*
-      web-stat-filter:
-        enabled: true
-        url-pattern: /*
-        exclusions: '*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*'
-      stat-view-servlet:
-        enabled: true
-        url-pattern: /druid/*
-        reset-enable: false
-        login-username: druid-user
-        login-password: druid-password
-      filter:
-        stat:
-          log-slow-sql: true
-      default-auto-commit: true
+      enable: true
+      username: druid-username
+      password: druid-password
