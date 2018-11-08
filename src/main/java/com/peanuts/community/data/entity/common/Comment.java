@@ -42,9 +42,10 @@ public class Comment implements CommonEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(unique = true, nullable = false)
-    private String name;
+    @Column(nullable = false)
+    private String content;
     
+    @Column(nullable = false)
     @JsonIgnore
     private Long userId;
     
