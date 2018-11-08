@@ -1,5 +1,6 @@
 package com.peanuts.community.data.entity.common;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -45,13 +46,16 @@ public class Article implements CommonEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(nullable = false)
     private String title;
 
+    @Column(nullable = false)
     private String summary;
 
-    @Column(length = 10000)
+    @Column(length = 10000, nullable = false)
     private String content;
 
+    @Column(nullable = false)
     @JsonIgnore
     private Long userId;
 
@@ -60,21 +64,21 @@ public class Article implements CommonEntity {
 
     @JsonIgnore
     @ElementCollection(targetClass = Long.class)
-    private List<Long> categoryIds;
+    private List<Long> categoryIds = new ArrayList<Long>();
 
     @Transient
     private List<Category> categories;
 
     @JsonIgnore
     @ElementCollection(targetClass = Long.class)
-    private List<Long> tagIds;
+    private List<Long> tagIds = new ArrayList<Long>();
 
     @Transient
     private List<Tag> tags;
 
     @JsonIgnore
     @ElementCollection(targetClass = Long.class)
-    private List<Long> commentIds;
+    private List<Long> commentIds = new ArrayList<Long>();
 
     @Transient
     private List<Comment> comments;
