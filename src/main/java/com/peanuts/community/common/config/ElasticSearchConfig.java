@@ -12,6 +12,9 @@ import org.elasticsearch.client.RestClient;
 import org.elasticsearch.client.RestClient.FailureListener;
 import org.elasticsearch.client.RestClientBuilder;
 import org.elasticsearch.client.RestHighLevelClient;
+import org.elasticsearch.client.sniff.ElasticsearchNodesSniffer;
+import org.elasticsearch.client.sniff.Sniffer;
+import org.elasticsearch.client.sniff.ElasticsearchNodesSniffer.Scheme;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -155,4 +158,13 @@ public class ElasticSearchConfig {
 //            }
 //        };
 //    }
+    
+    @Bean(destroyMethod = "close")
+    public Sniffer sniffer(RestHighLevelClient restHighLevelClient) {
+        RestClient restClient = restHighLevelClient.getLowLevelClient();
+        ElasticsearchNodesSniffer esNodesSniffer = new ElasticsearchNodesSniffer(restClient, 2000, Scheme.HTTP);
+        Sniffer sniffer = Sniffer.builder(restClient).setSniffIntervalMillis(60000)
+                .setSniffAfterFailureDelayMillis(30000).setNodesSniffer(esNodesSniffer).build();
+        return sniffer;
+    }
 }
