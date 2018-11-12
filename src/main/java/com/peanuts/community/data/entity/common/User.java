@@ -13,6 +13,10 @@ import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.format.annotation.DateTimeFormat.ISO;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonProperty.Access;
+import com.peanuts.community.common.BrowseControlColumn;
+import com.peanuts.community.common.vo.BrowseControlLevelEnum;
 import com.peanuts.community.data.entity.CommonEntity;
 
 import lombok.Data;
@@ -39,16 +43,19 @@ public class User implements CommonEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    
+
     private String name;
     
+    @BrowseControlColumn(level = BrowseControlLevelEnum.VIEW)
     private String mail;
     
+    @BrowseControlColumn(level = BrowseControlLevelEnum.VIEW)
     private String tel;
-    
+
     @Column()
+    @JsonProperty(access = Access.WRITE_ONLY)
     private String password;
-    
+
     @DateTimeFormat(iso = ISO.DATE)
     @JsonFormat(pattern = "yyyy-MM-dd")
     private Date createDate;

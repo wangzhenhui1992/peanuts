@@ -13,8 +13,11 @@ import javax.persistence.Transient;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.format.annotation.DateTimeFormat.ISO;
 
+import com.fasterxml.jackson.annotation.JsonFilter;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.peanuts.community.common.BrowseControlColumn;
+import com.peanuts.community.common.vo.BrowseControlLevelEnum;
 import com.peanuts.community.data.entity.CommonEntity;
 
 import lombok.Data;
@@ -36,13 +39,14 @@ public class Comment implements CommonEntity {
      * 
      */
     private static final long serialVersionUID = 4651965101132492079L;
-    private static final String ENTITY_NAME = "category";
+    private static final String ENTITY_NAME = "comment";
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(nullable = false)
+    @BrowseControlColumn(level=BrowseControlLevelEnum.VIEW)
     private String content;
     
     @Column(nullable = false)
@@ -50,6 +54,7 @@ public class Comment implements CommonEntity {
     private Long userId;
     
     @Transient
+    @BrowseControlColumn(level=BrowseControlLevelEnum.VIEW)
     private User user;
     
     @DateTimeFormat(iso = ISO.DATE)

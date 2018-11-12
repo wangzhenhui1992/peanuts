@@ -47,4 +47,15 @@ public class CommonUtils {
         return isStringEmpty(str) || str.trim().isEmpty();
         
     }
+    
+    /**
+     * <pre>
+     * Return true only when array is null or its length is 0. Otherwise return false.
+     * </pre>
+     * @param array
+     * @return
+     */
+    public static final <T extends Object> boolean isArrayEmpty(T[] array) {
+        return array == null || array.length == 0;
+    }
 }

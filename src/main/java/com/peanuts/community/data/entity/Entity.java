@@ -2,6 +2,7 @@ package com.peanuts.community.data.entity;
 
 import java.io.Serializable;
 
+import com.fasterxml.jackson.annotation.JsonFilter;
 import com.peanuts.community.common.vo.EntityTypeEnum;
 
 /**
@@ -12,6 +13,7 @@ import com.peanuts.community.common.vo.EntityTypeEnum;
  * @author wangzhenhui1992
  * @since 2018/10/30
  */
+@JsonFilter("browse-control")
 public interface Entity extends Serializable {
     
     /**

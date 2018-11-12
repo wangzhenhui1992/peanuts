@@ -1,5 +1,7 @@
 package com.peanuts.community.data.entity;
 
+import com.fasterxml.jackson.annotation.JsonFilter;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.peanuts.community.common.vo.EntityTypeEnum;
 
 /**
@@ -10,6 +12,7 @@ import com.peanuts.community.common.vo.EntityTypeEnum;
  * @author wangzhenhui1992
  * @since 2018/10/30
  */
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public interface CommonEntity extends ElasticSearchEntity, RdbEntity, RedisEntity {
 
     /**

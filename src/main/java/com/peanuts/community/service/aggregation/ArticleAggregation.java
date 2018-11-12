@@ -11,21 +11,21 @@ import com.peanuts.community.data.entity.common.Category;
 import com.peanuts.community.data.entity.common.Comment;
 import com.peanuts.community.data.entity.common.Tag;
 import com.peanuts.community.data.entity.common.User;
-import com.peanuts.community.service.AbstractManageService;
+import com.peanuts.community.service.AbstractBrowseService;
 @Component
 public class ArticleAggregation implements Aggregation<Article, Long> {
 
     @Autowired
-    private AbstractManageService<Tag, Long> tagService;
+    private AbstractBrowseService<Tag, Long> tagService;
 
     @Autowired
-    private AbstractManageService<User, Long> userService;
+    private AbstractBrowseService<User, Long> userService;
 
     @Autowired
-    private AbstractManageService<Comment, Long> commentService;
+    private AbstractBrowseService<Comment, Long> commentService;
 
     @Autowired
-    private AbstractManageService<Category, Long> categoryService;
+    private AbstractBrowseService<Category, Long> categoryService;
 
     @Override
     public Article aggregate(Article entity) {

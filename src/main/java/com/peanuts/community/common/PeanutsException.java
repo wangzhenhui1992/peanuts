@@ -1,5 +1,12 @@
 package com.peanuts.community.common;
 
+/**
+ * <pre>
+ * Exception
+ * </pre>
+ * @author wangzhenhui1992
+ * @since 2018/11/09
+ */
 public class PeanutsException extends RuntimeException {
 
     /**

@@ -1,5 +1,7 @@
 package com.peanuts.community.common.vo;
 
+import lombok.AllArgsConstructor;
+
 /**
  * <pre>
  * Enum of entity type
@@ -8,6 +10,7 @@ package com.peanuts.community.common.vo;
  * @author wangzhenhui1992
  * @since 2018/10/30
  */
+@AllArgsConstructor(access = lombok.AccessLevel.PRIVATE)
 public enum EntityTypeEnum implements Enum {
 
     /**
@@ -29,11 +32,6 @@ public enum EntityTypeEnum implements Enum {
 
     private int code;
     private String name;
-
-    private EntityTypeEnum(int code, String name) {
-        this.code = code;
-        this.name = name;
-    }
 
     @Override
     public int getCode() {
