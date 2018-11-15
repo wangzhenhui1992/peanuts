@@ -6,7 +6,7 @@ import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.peanuts.community.common.CommonUtils;
+import com.peanuts.community.common.util.CommonUtils;
 import com.peanuts.community.data.entity.CommonEntity;
 import com.peanuts.community.service.aggregation.Aggregation;
 

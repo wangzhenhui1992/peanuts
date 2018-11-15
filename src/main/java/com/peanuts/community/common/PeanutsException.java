@@ -17,6 +17,10 @@ public class PeanutsException extends RuntimeException {
     public PeanutsException(String message) {
         super(message);
     }
+    
+    public PeanutsException(Throwable t) {
+        super(t);
+    }
 
     public PeanutsException(String message, Throwable t) {
         super(message, t);

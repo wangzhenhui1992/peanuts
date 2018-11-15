@@ -13,6 +13,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
+import org.springframework.data.elasticsearch.annotations.Document;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.format.annotation.DateTimeFormat.ISO;
 
@@ -35,8 +36,8 @@ import lombok.NoArgsConstructor;
  * @since 2018/11/02
  */
 @Data
-@Entity(name = "article")
-@Table(name = "peanuts_article")
+@Entity(name = Article.ENTITY_NAME)
+@Document(indexName = Article.ENTITY_NAME)
 public class Article implements CommonEntity {
 
     /**
@@ -44,7 +45,7 @@ public class Article implements CommonEntity {
      */
     private static final long serialVersionUID = 83339089943794630L;
 
-    private static final String ENTITY_NAME = "article";
+    public static final String ENTITY_NAME = "article";
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

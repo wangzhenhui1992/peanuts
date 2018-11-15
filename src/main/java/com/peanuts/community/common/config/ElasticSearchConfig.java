@@ -1,5 +1,7 @@
 package com.peanuts.community.common.config;
 
+import java.net.InetAddress;
+import java.net.UnknownHostException;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -13,11 +15,21 @@ import org.elasticsearch.client.RestClient.FailureListener;
 import org.elasticsearch.client.RestClientBuilder;
 import org.elasticsearch.client.RestHighLevelClient;
 import org.elasticsearch.client.sniff.ElasticsearchNodesSniffer;
-import org.elasticsearch.client.sniff.Sniffer;
 import org.elasticsearch.client.sniff.ElasticsearchNodesSniffer.Scheme;
+import org.elasticsearch.client.sniff.Sniffer;
+import org.elasticsearch.client.transport.TransportClient;
+import org.elasticsearch.common.settings.Settings;
+import org.elasticsearch.common.transport.TransportAddress;
+import org.elasticsearch.transport.client.PreBuiltTransportClient;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.AutoConfigureAfter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.data.elasticsearch.core.ElasticsearchTemplate;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.peanuts.community.common.EntityMapper;
+import com.peanuts.community.common.PeanutsException;
 
 
 /**
@@ -29,6 +41,7 @@ import org.springframework.context.annotation.Configuration;
  * @since 2018/11/02
  */
 @Configuration
+@AutoConfigureAfter(CoreConfig.class)
 public class ElasticSearchConfig {
     @Autowired
     private EsConnectionInfo esConnectionInf;
@@ -166,5 +179,23 @@ public class ElasticSearchConfig {
         Sniffer sniffer = Sniffer.builder(restClient).setSniffIntervalMillis(60000)
                 .setSniffAfterFailureDelayMillis(30000).setNodesSniffer(esNodesSniffer).build();
         return sniffer;
+    }
+    
+    @Bean
+    public ElasticsearchTemplate elasticsearchTemplate(RestHighLevelClient restHighLevelClient, ObjectMapper objectMapper) {
+        Settings settings = Settings.builder()
+                .put("cluster.name", esConnectionInf.getCluster()).put("client.transport.sniff",false).build();
+        TransportClient client = new PreBuiltTransportClient(settings);
+        esConnectionInf.getNodes().stream().map(node->{
+            InetAddress inetAddress = null;
+            try {
+                inetAddress = InetAddress.getByName(node.getHost());
+            } catch (UnknownHostException e) {
+                throw new PeanutsException(e);
+            }
+            return new TransportAddress(inetAddress,9300);   
+        }).forEach(address->client.addTransportAddress(address));
+        ElasticsearchTemplate elasticsearchTemplate = new ElasticsearchTemplate(client, EntityMapper.of(objectMapper));
+        return elasticsearchTemplate;
     }
 }

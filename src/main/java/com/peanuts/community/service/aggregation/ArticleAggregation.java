@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.peanuts.community.common.CommonUtils;
+import com.peanuts.community.common.util.CommonUtils;
 import com.peanuts.community.data.entity.common.Article;
 import com.peanuts.community.data.entity.common.Category;
 import com.peanuts.community.data.entity.common.Comment;

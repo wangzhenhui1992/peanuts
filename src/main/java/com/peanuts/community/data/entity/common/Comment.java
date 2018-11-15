@@ -31,15 +31,14 @@ import lombok.Data;
  * @since 2018/11/05
  */
 @Data
-@Entity(name = "comment")
-@Table(name = "peanuts_comment")
+@Entity(name = Comment.ENTITY_NAME)
 public class Comment implements CommonEntity {
 
     /**
      * 
      */
     private static final long serialVersionUID = 4651965101132492079L;
-    private static final String ENTITY_NAME = "comment";
+    public static final String ENTITY_NAME = "comment";
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

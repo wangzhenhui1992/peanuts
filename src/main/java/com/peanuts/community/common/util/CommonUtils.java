@@ -1,4 +1,4 @@
-package com.peanuts.community.common;
+package com.peanuts.community.common.util;
 
 import java.util.Collection;
 /**

@@ -9,7 +9,7 @@ peanuts:
   data:
     rdb:
       driver-class-name: com.mysql.jdbc.Driver
-      url: jdbc:mysql://localhost:3306/mysql?useSSL=false&useUnicode=true&characterEncoding=UTF-8
+      url: jdbc:mysql://localhost:3306/peanuts?useSSL=false&useUnicode=true&characterEncoding=UTF-8
       username: root
       password: my-secret-pw
     redis:
@@ -19,7 +19,7 @@ peanuts:
       password: null
       timeout: 5
     elasticsearch:
-      cluster: elasticsearch
+      cluster: docker-cluster
       nodes:
       - host: localhost
         port: 9200

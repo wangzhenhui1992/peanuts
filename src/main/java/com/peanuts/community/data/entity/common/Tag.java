@@ -26,15 +26,14 @@ import lombok.Data;
  * @since 2018/11/05
  */
 @Data
-@Entity(name = "tag")
-@Table(name = "peanuts_tag")
+@Entity(name = Tag.ENTITY_NAME)
 public class Tag implements CommonEntity {
 
     /**
      * 
      */
     private static final long serialVersionUID = -5722879225067597129L;
-    private static final String ENTITY_NAME = "tag";
+    public static final String ENTITY_NAME = "tag";
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
