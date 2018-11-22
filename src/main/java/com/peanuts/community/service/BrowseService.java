@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.List;
 
 import com.peanuts.community.data.entity.CommonEntity;
+import com.peanuts.community.data.query.Query;
 
 /**
  * <pre>
@@ -20,6 +21,8 @@ public interface BrowseService<T extends CommonEntity, E extends Serializable> e
     List<T> findAllById(List<E> ids);
 
     List<T> findAll();
+    
+    List<T> search(Query queryEntity);
     
     T aggregate(T entity);
 }

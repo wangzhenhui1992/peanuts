@@ -1,5 +1,7 @@
 package com.peanuts.community.data.repository.rdb;
 
+import javax.persistence.EntityManager;
+
 import org.springframework.stereotype.Repository;
 
 import com.peanuts.community.data.entity.common.Article;
@@ -15,5 +17,4 @@ import com.peanuts.community.data.repository.RdbRepository;
  */
 @Repository
 public interface ArticleRepository extends RdbRepository<Article, Long> {
-
 }

@@ -12,6 +12,12 @@ import com.peanuts.community.common.vo.EntityTypeEnum;
  */
 public interface RedisEntity extends Entity {
 
+    /**
+     * define the entity type with {@link EntityTypeEnum#REDIS}
+     * 
+     * @see com.peanuts.community.data.entity.Entity#entityType()
+     * @return {@link EntityTypeEnum#REDIS}
+     */
     @Override
     default EntityTypeEnum entityType() {
         return EntityTypeEnum.REDIS;

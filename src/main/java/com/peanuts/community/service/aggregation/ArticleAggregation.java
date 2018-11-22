@@ -12,6 +12,14 @@ import com.peanuts.community.data.entity.common.Comment;
 import com.peanuts.community.data.entity.common.Tag;
 import com.peanuts.community.data.entity.common.User;
 import com.peanuts.community.service.AbstractBrowseService;
+
+/**
+ * <pre>
+ * Aggregation for article
+ * </pre>
+ * @author wangzhenhui1992
+ * @since 2018/11/22
+ */
 @Component
 public class ArticleAggregation implements Aggregation<Article, Long> {
 

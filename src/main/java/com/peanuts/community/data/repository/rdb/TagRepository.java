@@ -15,5 +15,4 @@ import com.peanuts.community.data.repository.RdbRepository;
  */
 @Repository
 public interface TagRepository extends RdbRepository<Tag, Long> {
-
 }

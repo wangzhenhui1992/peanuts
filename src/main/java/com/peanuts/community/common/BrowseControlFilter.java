@@ -28,7 +28,7 @@ public class BrowseControlFilter extends SimpleBeanPropertyFilter{
         BrowseControlColumn browseControlColumn = writer.getAnnotation(BrowseControlColumn.class);
         BrowseControlLevelEnum level = browseControlColumn == null ? BrowseControlLevelEnum.LIST
                 : browseControlColumn.level();
-        return RequestContext.BROWSE_CONTROL_LEVEL.get().compareTo(level) >= 0;
+        return RequestContext.getBrowseControlLevel().compareTo(level) >= 0;
     }
 
 }

@@ -1,7 +1,5 @@
 package com.peanuts.community.common.config;
 
-import java.net.InetAddress;
-import java.net.UnknownHostException;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -17,19 +15,13 @@ import org.elasticsearch.client.RestHighLevelClient;
 import org.elasticsearch.client.sniff.ElasticsearchNodesSniffer;
 import org.elasticsearch.client.sniff.ElasticsearchNodesSniffer.Scheme;
 import org.elasticsearch.client.sniff.Sniffer;
-import org.elasticsearch.client.transport.TransportClient;
-import org.elasticsearch.common.settings.Settings;
-import org.elasticsearch.common.transport.TransportAddress;
-import org.elasticsearch.transport.client.PreBuiltTransportClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.AutoConfigureAfter;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.data.elasticsearch.core.ElasticsearchTemplate;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.peanuts.community.common.EntityMapper;
-import com.peanuts.community.common.PeanutsException;
+import com.peanuts.community.data.repository.es.ElasticsearchClient;
 
 
 /**
@@ -41,11 +33,12 @@ import com.peanuts.community.common.PeanutsException;
  * @since 2018/11/02
  */
 @Configuration
-@AutoConfigureAfter(CoreConfig.class)
-public class ElasticSearchConfig {
+@AutoConfigureAfter(RdbConfig.class)
+@ConditionalOnProperty(name = "peanuts.data.elasticsearch.es-connection-type", havingValue = "REST")
+public class ElasticsearchRestConfig {
     @Autowired
     private EsConnectionInfo esConnectionInf;
-    
+
     @Bean(destroyMethod = "close")
     public RestHighLevelClient restHighLevelClient() {
         RestClientBuilder restClientBuilder = restClientBuilder();
@@ -171,7 +164,7 @@ public class ElasticSearchConfig {
 //            }
 //        };
 //    }
-    
+
     @Bean(destroyMethod = "close")
     public Sniffer sniffer(RestHighLevelClient restHighLevelClient) {
         RestClient restClient = restHighLevelClient.getLowLevelClient();
@@ -182,20 +175,7 @@ public class ElasticSearchConfig {
     }
     
     @Bean
-    public ElasticsearchTemplate elasticsearchTemplate(RestHighLevelClient restHighLevelClient, ObjectMapper objectMapper) {
-        Settings settings = Settings.builder()
-                .put("cluster.name", esConnectionInf.getCluster()).put("client.transport.sniff",false).build();
-        TransportClient client = new PreBuiltTransportClient(settings);
-        esConnectionInf.getNodes().stream().map(node->{
-            InetAddress inetAddress = null;
-            try {
-                inetAddress = InetAddress.getByName(node.getHost());
-            } catch (UnknownHostException e) {
-                throw new PeanutsException(e);
-            }
-            return new TransportAddress(inetAddress,9300);   
-        }).forEach(address->client.addTransportAddress(address));
-        ElasticsearchTemplate elasticsearchTemplate = new ElasticsearchTemplate(client, EntityMapper.of(objectMapper));
-        return elasticsearchTemplate;
+    public ElasticsearchClient elasticsearchClient(RestHighLevelClient restHighLevelClient) {
+        return ElasticsearchClient.adapt(restHighLevelClient);
     }
 }

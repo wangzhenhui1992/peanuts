@@ -1,11 +1,12 @@
 package com.peanuts.community.common.config;
 
 import lombok.Data;
+
 /**
- * SSL information of Elasticsearch
  * <pre>
- * Add Some Description Please
+ * SSL information of Elasticsearch
  * </pre>
+ * 
  * @author wangzhenhui1992
  * @since 2018/11/07
  */
@@ -17,6 +18,6 @@ public class EsSslInfo {
     private String password;
     private String token;
     private String keyStoreName;
-    private String KeyStoreFilePath;
+    private String keyStoreFilePath;
     private String keyStorePassword;
 }

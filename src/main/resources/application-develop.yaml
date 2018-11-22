@@ -11,26 +11,33 @@ peanuts:
       driver-class-name: com.mysql.jdbc.Driver
       url: jdbc:mysql://localhost:3306/peanuts?useSSL=false&useUnicode=true&characterEncoding=UTF-8
       username: root
-      password: my-secret-pw
+      password: peanuts-pw
     redis:
+      enabled: true
       host: localhost
       port: 6379
       database: 0
       password: null
       timeout: 5
     elasticsearch:
+      es-connection-type: TRANSPORT
       cluster: docker-cluster
       nodes:
       - host: localhost
         port: 9200
         scheme: http
-#      ssl:
-#        username: null
-#        password: null
-#        key-store-name: null
-#        key-store-file-path: null
-#        key-store-password: null
+      ssl:
+        username: null
+        password: null
+        key-store-name: null
+        key-store-file-path: null
+        key-store-password: null
     druid:
-      enable: true
+      enabled: true
       username: druid-username
       password: druid-password
+      allow:
+      deny:
+logging:
+    level:
+        com.peanuts.community: debug

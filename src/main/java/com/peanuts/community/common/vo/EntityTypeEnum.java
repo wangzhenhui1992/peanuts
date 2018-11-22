@@ -16,22 +16,21 @@ public enum EntityTypeEnum implements Enum {
     /**
      * Common Entity
      */
-    COMMON(0, "COMMON"),
+    COMMON(0),
     /**
      * RDB Entity
      */
-    RDB(1, "RDB"),
+    RDB(1),
     /**
      * Redis Entity
      */
-    REDIS(2, "REDIS"),
+    REDIS(2),
     /**
      * ES Entity
      */
-    ELASTICSEARCH(3, "ELASTICSEARCH");
+    ELASTICSEARCH(3);
 
     private int code;
-    private String name;
 
     @Override
     public int getCode() {
@@ -40,6 +39,6 @@ public enum EntityTypeEnum implements Enum {
 
     @Override
     public String getName() {
-        return this.name;
+        return this.name();
     }
 }

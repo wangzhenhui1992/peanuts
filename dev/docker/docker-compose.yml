@@ -1,0 +1,41 @@
+version: '2'
+services:
+  peanuts-mysql:
+#    build:
+#        context: .
+#        dockerfile: ./mysql/Dockerfile
+    image: mysql:5.7
+    container_name: peanuts-mysql
+    command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci --init-connect='SET NAMES utf8mb4;' --innodb-flush-log-at-trx-commit=0
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: peanuts-pw
+      MYSQL_DATABASE: peanuts
+    networks:
+      - peanuts
+    volumes:
+      - c:\peanuts\docker\data\mysql\data:/data
+  peanuts-elasticsearch:
+    image: elasticsearch:6.4.2
+    container_name: peanuts-elasticsearch
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+    environment:
+      discovery.type: single-node
+    volumes:
+      - c:\peanuts\docker\data\elasticsearch\data:/usr/share/elasticsearch/data
+    networks:
+      - peanuts
+  peanuts-redis:
+    image: redis:4.0.10
+    container_name: peanuts-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - c:\peanuts\docker\data\redis\data:/data
+    networks:
+      - peanuts
+networks:
+  peanuts:

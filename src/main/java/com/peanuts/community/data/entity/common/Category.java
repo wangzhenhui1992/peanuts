@@ -50,4 +50,13 @@ public class Category implements CommonEntity {
     public String entityName() {
         return ENTITY_NAME;
     }
+    
+    /**
+     * @see com.peanuts.community.data.entity.Entity#getId()
+     */
+    @SuppressWarnings("unchecked")
+    @Override
+    public Long getId() {
+        return this.id;
+    }
 }

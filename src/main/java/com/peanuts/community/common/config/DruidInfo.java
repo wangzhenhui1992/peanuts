@@ -18,7 +18,9 @@ import lombok.Data;
 @ConfigurationProperties("peanuts.data.druid")
 public class DruidInfo {
 
-    private boolean enable;
+    private boolean enabled;
     private String username;
     private String password;
+    private String[] allow;
+    private String[] deny;
 }

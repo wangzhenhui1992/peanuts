@@ -17,10 +17,16 @@ import com.peanuts.community.data.repository.RedisRepository;
  * @author wangzhenhui1992
  * @since 2018/11/08
  */
-public class BasicService<T extends CommonEntity, E extends Serializable> implements Service<T, E> {
+public class BasicServiceImpl<T extends CommonEntity, E extends Serializable> implements Service<T, E> {
 
     @Autowired
     private RdbRepository<T, E> rdbRepository;
+
+    @Autowired(required = false)
+    private ElasticSearchRepository<T, E> esRepository;
+
+    @Autowired(required = false)
+    private RedisRepository<T, E> redisRepository;
 
     @Override
     public final RdbRepository<T, E> getRdbRepository() {
@@ -29,13 +35,11 @@ public class BasicService<T extends CommonEntity, E extends Serializable> implem
 
     @Override
     public final RedisRepository<T, E> getRedisRepository() {
-        // TODO
-        return null;
+        return this.redisRepository;
     }
 
     @Override
     public final ElasticSearchRepository<T, E> getEsRepository() {
-        // TODO
-        return null;
+        return this.esRepository;
     }
 }

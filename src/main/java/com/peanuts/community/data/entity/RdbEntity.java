@@ -12,6 +12,12 @@ import com.peanuts.community.common.vo.EntityTypeEnum;
  */
 public interface RdbEntity extends Entity {
 
+    /**
+     * define the entity type with {@link EntityTypeEnum#RDB}
+     * 
+     * @see com.peanuts.community.data.entity.Entity#entityType()
+     * @return {@link EntityTypeEnum.RDB}
+     */
     @Override
     default EntityTypeEnum entityType() {
         return EntityTypeEnum.RDB;

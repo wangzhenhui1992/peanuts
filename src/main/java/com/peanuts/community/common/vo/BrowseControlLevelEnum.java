@@ -1,10 +1,12 @@
 package com.peanuts.community.common.vo;
 
 import lombok.AllArgsConstructor;
+
 /**
  * <pre>
  * Browse Control Level Enum
  * </pre>
+ * 
  * @author wangzhenhui1992
  * @since 2018/11/12
  */
@@ -12,14 +14,13 @@ import lombok.AllArgsConstructor;
 public enum BrowseControlLevelEnum implements Enum {
 
     // LIST
-    LIST(1, "LIST"),
+    LIST(1),
     // VIEW
-    VIEW(2, "VIEW"),
+    VIEW(2),
     // ADMIN
-    ADMIN(3, "ADMIN");
+    ADMIN(3);
 
     private int code;
-    private String name;
 
     @Override
     public int getCode() {
@@ -28,7 +29,7 @@ public enum BrowseControlLevelEnum implements Enum {
 
     @Override
     public String getName() {
-        return name;
+        return this.name();
     }
 
 }

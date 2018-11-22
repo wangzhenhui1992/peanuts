@@ -27,4 +27,10 @@ public interface Entity extends Serializable {
      * @return Type of entity
      */
     EntityTypeEnum entityType();
+    
+    /**
+     * Entity Id
+     * @return Id of entity
+     */
+    <E extends Serializable> E getId();
 }

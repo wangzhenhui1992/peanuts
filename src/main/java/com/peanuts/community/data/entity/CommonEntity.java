@@ -12,13 +12,15 @@ import com.peanuts.community.common.vo.EntityTypeEnum;
  * @author wangzhenhui1992
  * @since 2018/10/30
  */
-@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
 public interface CommonEntity extends ElasticSearchEntity, RdbEntity, RedisEntity {
 
     /**
-     * <pre>
-     * @see com.peanuts.community.data.entity.ElasticSearchEntity#entityType()
-     * </pre>
+     * define the entity type with {@link EntityTypeEnum#COMMON}
+     * 
+     * @see com.peanuts.community.data.entity.Entity#entityType()
+     * 
+     * @return {@link EntityTypeEnum.COMMON}
      */
     @Override
     default EntityTypeEnum entityType() {

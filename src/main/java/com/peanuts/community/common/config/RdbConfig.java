@@ -3,6 +3,7 @@ package com.peanuts.community.common.config;
 import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.AutoConfigureAfter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -17,6 +18,7 @@ import com.alibaba.druid.pool.DruidDataSource;
  * @since 2018/11/02
  */
 @Configuration
+@AutoConfigureAfter(CoreConfig.class)
 public class RdbConfig {
 
     @Autowired

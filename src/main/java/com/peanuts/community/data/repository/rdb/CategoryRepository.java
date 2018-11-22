@@ -13,5 +13,4 @@ import com.peanuts.community.data.repository.RdbRepository;
  */
 @Repository
 public interface CategoryRepository extends RdbRepository<Category,Long>{
-    
 }

@@ -15,5 +15,4 @@ import com.peanuts.community.data.repository.RdbRepository;
  */
 @Repository
 public interface UserRepository extends RdbRepository<User, Long> {
-
 }

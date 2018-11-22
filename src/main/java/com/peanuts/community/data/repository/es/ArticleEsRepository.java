@@ -1,11 +1,22 @@
 package com.peanuts.community.data.repository.es;
 
-import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Component;
 
 import com.peanuts.community.data.entity.common.Article;
-import com.peanuts.community.data.repository.ElasticSearchRepository;
+/**
+ * <pre>
+ * Add Some Description Please
+ * </pre>
+ * @author wangzhenhui1992
+ * @since 2018/11/21
+ */
+public class ArticleEsRepository extends AbstractEsRepository<Article, Long> {
 
-@Repository
-public interface ArticleEsRepository extends ElasticSearchRepository<Article,Long> {
+    @Override
+    protected ElasticsearchIndexDefine define() {
+        ElasticsearchIndexDefine articleDefine = new ElasticsearchIndexDefine();
+        articleDefine.setIndexName(Article.ENTITY_NAME);
+        return articleDefine;
+    }
 
 }

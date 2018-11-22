@@ -1,11 +1,10 @@
 package com.peanuts.community.data.repository;
 
 import java.io.Serializable;
-
-import org.springframework.data.elasticsearch.repository.ElasticsearchRepository;
-import org.springframework.data.repository.NoRepositoryBean;
+import java.util.List;
 
 import com.peanuts.community.data.entity.ElasticSearchEntity;
+import com.peanuts.community.data.query.Query;
 
 /**
  * <pre>
@@ -15,8 +14,25 @@ import com.peanuts.community.data.entity.ElasticSearchEntity;
  * @author wangzhenhui1992
  * @since 2018/11/02
  */
-@NoRepositoryBean
-public interface ElasticSearchRepository<T extends ElasticSearchEntity, E extends Serializable>
-        extends ElasticsearchRepository<T, E> {
-
+public interface ElasticSearchRepository<T extends ElasticSearchEntity, E extends Serializable>{
+    
+    /**
+     * Index a document
+     * @param entity target to index
+     * @return the entity
+     */
+    <S extends T> S index(S entity);
+    
+    /**
+     * Search
+     * @param entity search options
+     * @return result
+     */
+    List<T> search(Query entity);
+    
+    /**
+     * Delete a document by id
+     * @param id id
+     */
+    void delete(E id);
 }

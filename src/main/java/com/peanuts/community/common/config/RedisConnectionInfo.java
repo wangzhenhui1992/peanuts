@@ -18,6 +18,7 @@ import lombok.Data;
 @ConfigurationProperties("peanuts.data.redis")
 public class RedisConnectionInfo {
 
+    private boolean enabled; 
     private String host;
     private Integer port;
     private Integer database;

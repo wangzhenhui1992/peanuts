@@ -10,10 +10,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Table;
 import javax.persistence.Transient;
 
-import org.springframework.data.elasticsearch.annotations.Document;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.format.annotation.DateTimeFormat.ISO;
 
@@ -23,9 +21,7 @@ import com.peanuts.community.common.BrowseControlColumn;
 import com.peanuts.community.common.vo.BrowseControlLevelEnum;
 import com.peanuts.community.data.entity.CommonEntity;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 /**
  * <pre>
@@ -37,7 +33,6 @@ import lombok.NoArgsConstructor;
  */
 @Data
 @Entity(name = Article.ENTITY_NAME)
-@Document(indexName = Article.ENTITY_NAME)
 public class Article implements CommonEntity {
 
     /**
@@ -57,7 +52,7 @@ public class Article implements CommonEntity {
     @Column(nullable = false)
     private String summary;
 
-    @BrowseControlColumn(level=BrowseControlLevelEnum.VIEW)
+    @BrowseControlColumn(level = BrowseControlLevelEnum.VIEW)
     @Column(length = 10000, nullable = false)
     private String content;
 
@@ -101,13 +96,17 @@ public class Article implements CommonEntity {
         return ENTITY_NAME;
     }
 
-    @BrowseControlColumn(level=BrowseControlLevelEnum.VIEW)
+    @BrowseControlColumn(level = BrowseControlLevelEnum.VIEW)
     public List<Comment> getComments() {
         return comments;
     }
-
-    public void setComments(List<Comment> comments) {
-        this.comments = comments;
-    }
     
+    /**
+     * @see com.peanuts.community.data.entity.Entity#getId()
+     */
+    @SuppressWarnings("unchecked")
+    @Override
+    public Long getId() {
+        return this.id;
+    }
 }
