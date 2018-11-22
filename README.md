@@ -29,15 +29,15 @@ Peanuts is an open-source project for exchange community.
   - [ ] 7.6-CloudFront
   - [ ] 7.7-CodeDeploy
   - [ ] 7.8-CodePipeline
-- [ ] 8-Local Environment
-  - [ ] 8.1-Docker
+- [x] 8-Local Environment
+  - [x] 8.1-Docker
 - [ ] 9-Development
   - [ ] 9.1-common function
-    - [ ] 9.1.1-caching function
+    - [x] 9.1.1-caching function
     - [ ] 9.1.2-view counting function
     - [ ] 9.1.3-log collecting function 
     - [ ] 9.1.4-authentication[jwt] function
-    - [ ] 9.1.5-repositories for diffrent databases(maybe tables)
+    - [x] 9.1.5-repositories for diffrent databases(maybe tables)
     - [ ] 9.1.6-common utils
   - [ ] 9.2-public apis[GET]
     - [ ] 9.2.1-article apis
