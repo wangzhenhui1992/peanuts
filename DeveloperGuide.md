@@ -10,6 +10,8 @@
   - Redis
   - ElasticSearch
   - MySQL or H2
+  - Nginx
+  - Docker(Kubernetes optional)
 - CICD
   - Buddy or Travis
   - AWS CLI
