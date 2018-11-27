@@ -38,20 +38,20 @@ Peanuts is an open-source project for exchange community.
     - [ ] 9.1.3-log collecting function 
     - [ ] 9.1.4-authentication[jwt] function
     - [x] 9.1.5-repositories for diffrent databases(maybe tables)
-    - [ ] 9.1.6-common utils
-  - [ ] 9.2-public apis[GET]
-    - [ ] 9.2.1-article apis
-    - [ ] 9.2.2-comment apis
-    - [ ] 9.2.3-category apis
-    - [ ] 9.2.4-search apis
-    - [ ] 9.2.5-user information apis
+    - [x] 9.1.6-common utils
+  - [x] 9.2-public apis[GET]
+    - [x] 9.2.1-article apis
+    - [x] 9.2.2-comment apis
+    - [x] 9.2.3-category apis
+    - [x] 9.2.4-search apis
+    - [x] 9.2.5-user information apis
   - [ ] 9.3-admin apis[POST,PUT,DELETE]
     - [ ] 9.3.1-login apis
-    - [ ] 9.3.2-password apis
-    - [ ] 9.3.3-article admin apis
-    - [ ] 9.3.4-comment admin apis
-    - [ ] 9.3.5-category admin apis
-    - [ ] 9.3.6-user information api
+    - [x] 9.3.2-password apis
+    - [x] 9.3.3-article admin apis
+    - [x] 9.3.4-comment admin apis
+    - [x] 9.3.5-category admin apis
+    - [x] 9.3.6-user information api
   - [ ] 9.4-Frontend
     - see also [peanuts-front](https://github.com/wangzhenhui1992/peanuts-front)  
 - [ ] 10-Guide
