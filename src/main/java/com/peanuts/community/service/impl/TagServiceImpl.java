@@ -3,7 +3,7 @@ package com.peanuts.community.service.impl;
 import org.springframework.stereotype.Service;
 
 import com.peanuts.community.data.entity.common.Tag;
-import com.peanuts.community.service.AbstractManageService;
+import com.peanuts.community.service.BasicManageServiceImpl;
 /**
  * <pre>
  * Tag Service
@@ -12,6 +12,6 @@ import com.peanuts.community.service.AbstractManageService;
  * @since 2018/11/08
  */
 @Service
-public class TagServiceImpl extends AbstractManageService<Tag,Long>{
+public class TagServiceImpl extends BasicManageServiceImpl<Tag,Long>{
     
 }

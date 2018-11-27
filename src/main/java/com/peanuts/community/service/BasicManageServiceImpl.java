@@ -7,14 +7,14 @@ import com.peanuts.community.data.entity.CommonEntity;
 
 /**
  * <pre>
- * Abstract class of {@link ManageService} and extends {@link AbstractBrowseService}
+ * Abstract class of {@link ManageService} and extends {@link BasicBrowseServiceImpl}
  * </pre>
  * 
  * @author wangzhenhui1992
  * @since 2018/11/07
  */
-public abstract class AbstractManageService<T extends CommonEntity, E extends Serializable>
-        extends AbstractBrowseService<T, E> implements ManageService<T, E> {
+public class BasicManageServiceImpl<T extends CommonEntity, E extends Serializable>
+        extends BasicBrowseServiceImpl<T, E> implements ManageService<T, E> {
 
     @Override
     public final T update(T entity) {
@@ -26,6 +26,12 @@ public abstract class AbstractManageService<T extends CommonEntity, E extends Se
     public final T create(T entity) {
         T entityCrt = doUpdate(entity);
         return aggregate(entityCrt);
+    }
+    
+    @Override
+    public final T delete(E id) {
+        doDelete(id);
+        return this.get(id);
     }
 
     protected T doUpdate(T entity) {
@@ -43,16 +49,6 @@ public abstract class AbstractManageService<T extends CommonEntity, E extends Se
         return Optional.ofNullable(this.getEsRepository()).map(esRepo->esRepo.index(entity)).orElse(null);
     }
 
-    protected T doCreate(T entity) {
-        return this.getRdbRepository().save(entity);
-    }
-
-
-    @Override
-    public final void delete(E id) {
-        doDelete(id);
-    }
-    
     protected void doDelete(E id) {
         this.getRdbRepository().deleteById(id);
     }

@@ -1,7 +1,5 @@
 package com.peanuts.community.data.repository.redis;
 
-import org.springframework.stereotype.Component;
-
 import com.peanuts.community.data.entity.common.Article;
 /**
  * <pre>

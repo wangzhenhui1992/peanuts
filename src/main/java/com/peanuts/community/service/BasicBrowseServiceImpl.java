@@ -20,7 +20,7 @@ import com.peanuts.community.service.aggregation.Aggregation;
  * @author wangzhenhui1992
  * @since 2018/11/08
  */
-public abstract class AbstractBrowseService<T extends CommonEntity, E extends Serializable> extends BasicServiceImpl<T, E>
+public class BasicBrowseServiceImpl<T extends CommonEntity, E extends Serializable> extends BasicServiceImpl<T, E>
         implements BrowseService<T, E> {
 
     @Autowired
@@ -60,7 +60,7 @@ public abstract class AbstractBrowseService<T extends CommonEntity, E extends Se
     }
 
     protected T doGetFromRdb(E id) {
-        T entity = this.getRdbRepository().getOne(id);
+        T entity = this.getRdbRepository().findById(id).orElse(null);
         Optional.ofNullable(entity).ifPresent(t -> doUpdateToRedis(id, t));
         return entity;
     }
@@ -80,7 +80,7 @@ public abstract class AbstractBrowseService<T extends CommonEntity, E extends Se
 
     @Override
     public final T aggregate(T entity) {
-        return Optional.ofNullable(entity).map(t -> this.aggregation.aggregate(t)).orElseGet(null);
+        return Optional.ofNullable(entity).map(t -> this.aggregation.aggregate(t)).orElse(null);
     }
 
     private final List<T> aggregate(List<T> entities) {

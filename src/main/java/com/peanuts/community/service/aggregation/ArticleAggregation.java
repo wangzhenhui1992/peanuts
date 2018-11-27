@@ -11,7 +11,7 @@ import com.peanuts.community.data.entity.common.Category;
 import com.peanuts.community.data.entity.common.Comment;
 import com.peanuts.community.data.entity.common.Tag;
 import com.peanuts.community.data.entity.common.User;
-import com.peanuts.community.service.AbstractBrowseService;
+import com.peanuts.community.service.BasicBrowseServiceImpl;
 
 /**
  * <pre>
@@ -24,16 +24,16 @@ import com.peanuts.community.service.AbstractBrowseService;
 public class ArticleAggregation implements Aggregation<Article, Long> {
 
     @Autowired
-    private AbstractBrowseService<Tag, Long> tagService;
+    private BasicBrowseServiceImpl<Tag, Long> tagService;
 
     @Autowired
-    private AbstractBrowseService<User, Long> userService;
+    private BasicBrowseServiceImpl<User, Long> userService;
 
     @Autowired
-    private AbstractBrowseService<Comment, Long> commentService;
+    private BasicBrowseServiceImpl<Comment, Long> commentService;
 
     @Autowired
-    private AbstractBrowseService<Category, Long> categoryService;
+    private BasicBrowseServiceImpl<Category, Long> categoryService;
 
     @Override
     public Article aggregate(Article entity) {

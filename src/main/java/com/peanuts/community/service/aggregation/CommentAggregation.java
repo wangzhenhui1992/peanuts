@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 
 import com.peanuts.community.data.entity.common.Comment;
 import com.peanuts.community.data.entity.common.User;
-import com.peanuts.community.service.AbstractBrowseService;
+import com.peanuts.community.service.BasicBrowseServiceImpl;
 
 /**
  * <pre>
@@ -18,7 +18,7 @@ import com.peanuts.community.service.AbstractBrowseService;
 public class CommentAggregation implements Aggregation<Comment, Long> {
 
     @Autowired
-    private AbstractBrowseService<User,Long> userService;
+    private BasicBrowseServiceImpl<User,Long> userService;
     
     @Override
     public Comment aggregate(Comment entity) {

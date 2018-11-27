@@ -15,6 +15,9 @@ public class RequestContext {
     private static final ThreadLocal<BrowseControlLevelEnum> BROWSE_CONTROL_LEVEL = new ThreadLocal<BrowseControlLevelEnum>();
     private static final ThreadLocal<User> LOGIN_USER = new ThreadLocal<User>();
 
+    static {
+        setBrowseControlLevel(BrowseControlLevelEnum.ADMIN);
+    }
     public static final void setBrowseControlLevel(BrowseControlLevelEnum level) {
         BROWSE_CONTROL_LEVEL.set(level);
     }

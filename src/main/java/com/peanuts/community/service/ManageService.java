@@ -16,5 +16,5 @@ public interface ManageService<T extends CommonEntity, E extends Serializable> e
 
     T create(T entity);
 
-    void delete(E id);
+    T delete(E id);
 }

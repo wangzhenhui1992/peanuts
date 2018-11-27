@@ -3,7 +3,7 @@ package com.peanuts.community.service.impl;
 import org.springframework.stereotype.Service;
 
 import com.peanuts.community.data.entity.common.Article;
-import com.peanuts.community.service.AbstractManageService;
+import com.peanuts.community.service.BasicManageServiceImpl;
 
 /**
  * <pre>
@@ -14,6 +14,6 @@ import com.peanuts.community.service.AbstractManageService;
  * @since 2018/11/07
  */
 @Service
-public class ArticleServiceImpl extends AbstractManageService<Article, Long> {
+public class ArticleServiceImpl extends BasicManageServiceImpl<Article, Long> {
 
 }

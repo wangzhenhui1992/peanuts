@@ -1,6 +1,5 @@
 package com.peanuts.community.data.entity;
 
-import com.fasterxml.jackson.annotation.JsonFilter;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.peanuts.community.common.vo.EntityTypeEnum;
 
