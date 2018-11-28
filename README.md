@@ -9,51 +9,35 @@
 |_|   \___|\__,_|_| |_|\__,_|\__|___/
 ```
 # Peanuts
-Peanuts is an open-source project for exchange community.
+Peanuts is an open-source project for exchange community system.
+This repository is just the backend of the system while [peanuts-front](/wangzhenhui1992/peanuts-front)
 
-# Tasklist
-- [x] 1-Create github project
-- [x] 2-Add license
-- [x] 3-Initialize SpringBoot project
-- [x] 4-Add dependence
-- [x] 5-Integrate database
-- [ ] 6-CICD
-  - [ ] 6.1-Add CI scripts for build
-  - [ ] 6.2-CI/CD scripts for deploy
-- [ ] 7-AWS Environment
-  - [ ] 7.1-EC2
-  - [ ] 7.2-S3
-  - [ ] 7.3-ElasticSearch
-  - [ ] 7.4-ElasticCache[Redis]
-  - [ ] 7.5-RDB
-  - [ ] 7.6-CloudFront
-  - [ ] 7.7-CodeDeploy
-  - [ ] 7.8-CodePipeline
-- [x] 8-Local Environment
-  - [x] 8.1-Docker
-- [ ] 9-Development
-  - [ ] 9.1-common function
-    - [x] 9.1.1-caching function
-    - [ ] 9.1.2-view counting function
-    - [ ] 9.1.3-log collecting function 
-    - [ ] 9.1.4-authentication[jwt] function
-    - [x] 9.1.5-repositories for diffrent databases(maybe tables)
-    - [x] 9.1.6-common utils
-  - [x] 9.2-public apis[GET]
-    - [x] 9.2.1-article apis
-    - [x] 9.2.2-comment apis
-    - [x] 9.2.3-category apis
-    - [x] 9.2.4-search apis
-    - [x] 9.2.5-user information apis
-  - [ ] 9.3-admin apis[POST,PUT,DELETE]
-    - [ ] 9.3.1-login apis
-    - [x] 9.3.2-password apis
-    - [x] 9.3.3-article admin apis
-    - [x] 9.3.4-comment admin apis
-    - [x] 9.3.5-category admin apis
-    - [x] 9.3.6-user information api
-  - [ ] 9.4-Frontend
-    - see also [peanuts-front](https://github.com/wangzhenhui1992/peanuts-front)  
-- [ ] 10-Guide
-  - [ ] 10.1-User Guide
-  - [ ] 10.2-Developer Guide
+# Language,Frameworks and Environments 
+### Frontend
+- [Angular](https://angular.io/)
+- [Bootstrap](https://getbootstrap.com/) 
+- [Font-Awesome](https://fontawesome.com/)
+### Backend
+- Java(8+)
+- [SpringBoot(2.x)](http://spring.io/projects/spring-boot)
+- [SpringData](https://spring.io/projects/spring-data)
+- [Redis](https://redis.io/)
+- [ElasticSearch](https://www.elastic.co/)
+- [MySQL](https://www.mysql.com/)
+- [Nginx](http://nginx.org/)
+- [Docker](https://www.docker.com/) [Kubernetes optional](https://kubernetes.io/)
+### CICD
+- [Buddy](https://buddy.works/)
+- [AWS CLI](https://aws.amazon.com/)
+- [AWS CodeDeploy](https://aws.amazon.com/)
+- [AWS CodePipeline](https://aws.amazon.com/)
+### Sample Website Environment
+- [AWS EC2](https://aws.amazon.com/)
+- [AWS S3](https://aws.amazon.com/)
+- [AWS CloudFront](https://aws.amazon.com/)
+- [AWS ElasticCache](https://aws.amazon.com/)
+- [AWS ElasticSearchService](https://aws.amazon.com/)
+- [AWS Lambda(Optional)](https://aws.amazon.com/)
+### IDE
+- [SpringToolSuit](http://spring.io/tools)
+
