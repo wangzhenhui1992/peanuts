@@ -9,10 +9,12 @@
 |_|   \___|\__,_|_| |_|\__,_|\__|___/
 ```
 # Peanuts
-Peanuts is an open-source project for exchange community system.
-This repository is just the backend of the system while [peanuts-front](/wangzhenhui1992/peanuts-front)
+Peanuts is an open-source project for exchange community system which is aimed to create a community simply and quickly.
+This repository is just the backend of the system while [peanuts-front](/wangzhenhui1992/peanuts-front) is the frontend.
+We uses popular languages , frameworks as well as cloud platform.
+It is still under development but joining is always welcome.
 
-# Language,Frameworks and Environments 
+# Language,Frameworks and Environments
 ### Frontend
 - [Angular](https://angular.io/)
 - [Bootstrap](https://getbootstrap.com/) 
