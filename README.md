@@ -10,9 +10,8 @@
 ```
 # Peanuts
 Peanuts is an open-source project for exchange community system which is aimed to create a community simply and quickly.
-This repository is just the backend of the system while [peanuts-front](/wangzhenhui1992/peanuts-front) is the frontend.
-We uses popular languages , frameworks as well as cloud platform.
-It is still under development but joining is always welcome.
+We use popular languages , frameworks as well as cloud platform to implement it, such as SpringBoot, Elasticsearch, Redis and etc.
+It is still under development but joining is always welcome.This repository is just the backend of the system while [peanuts-front](/wangzhenhui1992/peanuts-front) is the frontend.
 
 # Language,Frameworks and Environments
 ### Frontend
