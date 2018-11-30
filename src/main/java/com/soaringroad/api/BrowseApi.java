@@ -6,7 +6,7 @@ import java.util.List;
 import org.springframework.http.ResponseEntity;
 
 import com.soaringroad.common.entity.Entity;
-import com.soaringroad.data.query.Query;
+import com.soaringroad.common.query.Query;
 
 /**
  * <pre>

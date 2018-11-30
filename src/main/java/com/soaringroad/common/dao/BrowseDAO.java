@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.List;
 
 import com.soaringroad.common.entity.CommonEntity;
-import com.soaringroad.data.query.Query;
+import com.soaringroad.common.query.Query;
 
 /**
  * <pre>

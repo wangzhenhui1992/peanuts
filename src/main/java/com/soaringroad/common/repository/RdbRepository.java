@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.repository.NoRepositoryBean;
 
 import com.soaringroad.common.entity.RdbEntity;
-import com.soaringroad.data.rdb.RdbSearchable;
+import com.soaringroad.data.Searchable;
 
 /**
  * <pre>
@@ -18,5 +18,5 @@ import com.soaringroad.data.rdb.RdbSearchable;
  */
 @NoRepositoryBean
 public interface RdbRepository<T extends RdbEntity, E extends Serializable>
-        extends Repository<T, E>, JpaRepository<T, E>, RdbSearchable<T> {
+        extends Repository<T, E>, JpaRepository<T, E>, Searchable<T> {
 }

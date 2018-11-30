@@ -1,16 +1,19 @@
-package com.soaringroad.peanuts.service;
+package com.soaringroad.peanuts.dao;
 
 import org.springframework.stereotype.Service;
 
 import com.soaringroad.dao.BasicManageDAO;
-import com.soaringroad.peanuts.entity.Category;
+import com.soaringroad.peanuts.entity.Article;
+
 /**
  * <pre>
- * Category Service
+ * Article Service
  * </pre>
+ * 
  * @author wangzhenhui1992
  * @since 2018/11/07
  */
 @Service
-public class CategoryServiceImpl extends BasicManageDAO<Category, Long> {
+public class ArticleDAO extends BasicManageDAO<Article, Long> {
+
 }

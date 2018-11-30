@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.soaringroad.common.dao.BrowseDAO;
 import com.soaringroad.common.entity.CommonEntity;
-import com.soaringroad.data.query.Query;
+import com.soaringroad.common.query.Query;
 
 /**
  * <pre>

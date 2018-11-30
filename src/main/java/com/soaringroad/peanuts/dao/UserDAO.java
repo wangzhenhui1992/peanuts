@@ -1,6 +1,6 @@
-package com.soaringroad.peanuts.service;
+package com.soaringroad.peanuts.dao;
 
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 
 import com.soaringroad.dao.BasicManageDAO;
 import com.soaringroad.peanuts.entity.User;
@@ -11,7 +11,7 @@ import com.soaringroad.peanuts.entity.User;
  * @author wangzhenhui1992
  * @since 2018/11/07
  */
-@Service
-public class UserServiceImpl extends BasicManageDAO<User,Long>{
+@Component
+public class UserDAO extends BasicManageDAO<User,Long>{
     
 }

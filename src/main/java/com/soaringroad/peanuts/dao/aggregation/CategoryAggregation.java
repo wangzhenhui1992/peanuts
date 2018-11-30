@@ -1,4 +1,4 @@
-package com.soaringroad.peanuts.service.aggregation;
+package com.soaringroad.peanuts.dao.aggregation;
 
 import org.springframework.stereotype.Component;
 

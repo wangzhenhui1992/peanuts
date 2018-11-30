@@ -1,4 +1,4 @@
-package com.soaringroad.data.query;
+package com.soaringroad.data.es;
 
 import java.util.Optional;
 
@@ -9,8 +9,13 @@ import org.elasticsearch.index.query.QueryBuilders;
 import org.elasticsearch.search.builder.SearchSourceBuilder;
 import org.elasticsearch.search.sort.SortOrder;
 
+import com.soaringroad.common.query.Query;
+import com.soaringroad.common.query.QueryBuilder;
+import com.soaringroad.common.query.QueryCondition;
+import com.soaringroad.common.query.QuerySort;
 import com.soaringroad.common.util.CommonUtils;
 import com.soaringroad.common.util.ElasticsearchUtil;
+import com.soaringroad.common.vo.QuerySortOrderEnum;
 
 /** <pre>
  * ES(Rest)用QueryBuilder
@@ -18,10 +23,10 @@ import com.soaringroad.common.util.ElasticsearchUtil;
  * @author wangzhenhui1992
  * @since 2018/11/20
  */
-public class EsRestQueryBuilder implements QueryBuilder {
+public class EsQueryBuilder implements QueryBuilder {
     private Query queryEntity;
 
-    public EsRestQueryBuilder(@NotNull Query queryEntity) {
+    public EsQueryBuilder(@NotNull Query queryEntity) {
         this.queryEntity = queryEntity;
     }
 
@@ -34,8 +39,8 @@ public class EsRestQueryBuilder implements QueryBuilder {
         buildSort(sourceBuilder);
         buildPage(sourceBuilder);
         sourceBuilder.query(boolQueryBuilder);
-        if (!CommonUtils.isArrayEmpty(this.queryEntity.fetchFields)) {
-            sourceBuilder.fetchSource(this.queryEntity.fetchFields, null);
+        if (!CommonUtils.isArrayEmpty(this.queryEntity.getFetchFields())) {
+            sourceBuilder.fetchSource(this.queryEntity.getFetchFields(), null);
         }
         return sourceBuilder;
     }

@@ -3,8 +3,8 @@ package com.soaringroad.common.util;
 import org.elasticsearch.index.query.BoolQueryBuilder;
 import org.elasticsearch.index.query.QueryBuilders;
 
-import com.soaringroad.data.query.QueryCondition;
-import com.soaringroad.data.query.QueryOptionEnum;
+import com.soaringroad.common.query.QueryCondition;
+import com.soaringroad.common.vo.QueryOptionEnum;
 /**
  * <pre>
  * Utility class of Elasticsearch

@@ -1,10 +1,9 @@
 package com.soaringroad.common.repository;
 
 import java.io.Serializable;
-import java.util.List;
 
 import com.soaringroad.common.entity.ElasticSearchEntity;
-import com.soaringroad.data.query.Query;
+import com.soaringroad.data.Searchable;
 
 /**
  * <pre>
@@ -14,7 +13,7 @@ import com.soaringroad.data.query.Query;
  * @author wangzhenhui1992
  * @since 2018/11/02
  */
-public interface ElasticSearchRepository<T extends ElasticSearchEntity, E extends Serializable>{
+public interface ElasticSearchRepository<T extends ElasticSearchEntity, E extends Serializable> extends Searchable<T>{
     
     /**
      * Index a document
@@ -22,13 +21,6 @@ public interface ElasticSearchRepository<T extends ElasticSearchEntity, E extend
      * @return the entity
      */
     <S extends T> S index(S entity);
-    
-    /**
-     * Search
-     * @param entity search options
-     * @return result
-     */
-    List<T> search(Query entity);
     
     /**
      * Delete a document by id

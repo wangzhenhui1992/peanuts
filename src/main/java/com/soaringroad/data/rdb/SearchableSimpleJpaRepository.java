@@ -8,9 +8,8 @@ import javax.persistence.EntityManager;
 import org.springframework.data.domain.Page;
 import org.springframework.data.jpa.repository.support.SimpleJpaRepository;
 
-import com.soaringroad.data.query.Query;
-import com.soaringroad.data.query.RdbQuery;
-import com.soaringroad.data.query.RdbQueryBuilder;
+import com.soaringroad.common.query.Query;
+import com.soaringroad.data.Searchable;
 /**
  * <pre>
  * SearchableSimpleJpaRepository
@@ -18,7 +17,7 @@ import com.soaringroad.data.query.RdbQueryBuilder;
  * @author wangzhenhui1992
  * @since 2018/11/22
  */
-public class SearchableSimpleJpaRepository<T, E> extends SimpleJpaRepository<T, E> implements RdbSearchable<T> {
+public class SearchableSimpleJpaRepository<T, E> extends SimpleJpaRepository<T, E> implements Searchable<T> {
 
     public SearchableSimpleJpaRepository(Class<T> domainClass, EntityManager em) {
         super(domainClass, em);

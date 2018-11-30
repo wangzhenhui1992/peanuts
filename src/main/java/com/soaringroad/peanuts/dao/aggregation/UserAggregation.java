@@ -1,17 +1,17 @@
-package com.soaringroad.peanuts.service.aggregation;
+package com.soaringroad.peanuts.dao.aggregation;
 
 import org.springframework.stereotype.Component;
 
 import com.soaringroad.dao.aggregation.DefaultAggregation;
-import com.soaringroad.peanuts.entity.Tag;
+import com.soaringroad.peanuts.entity.User;
 
 /**
  * <pre>
- * Aggregation for tag
+ * Aggregation for user
  * </pre>
  * @author wangzhenhui1992
  * @since 2018/11/22
  */
 @Component
-public class TagAggregation extends DefaultAggregation<Tag, Long> {
+public class UserAggregation extends DefaultAggregation<User, Long> {
 }

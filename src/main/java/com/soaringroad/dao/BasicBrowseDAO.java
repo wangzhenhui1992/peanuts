@@ -10,8 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import com.soaringroad.common.dao.Aggregation;
 import com.soaringroad.common.dao.BrowseDAO;
 import com.soaringroad.common.entity.CommonEntity;
+import com.soaringroad.common.query.Query;
 import com.soaringroad.common.util.CommonUtils;
-import com.soaringroad.data.query.Query;
 
 /**
  * <pre>

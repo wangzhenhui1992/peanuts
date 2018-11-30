@@ -1,6 +1,6 @@
-package com.soaringroad.peanuts.service;
+package com.soaringroad.peanuts.dao;
 
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 
 import com.soaringroad.dao.BasicManageDAO;
 import com.soaringroad.peanuts.entity.Tag;
@@ -11,7 +11,7 @@ import com.soaringroad.peanuts.entity.Tag;
  * @author wangzhenhui1992
  * @since 2018/11/08
  */
-@Service
-public class TagServiceImpl extends BasicManageDAO<Tag,Long>{
+@Component
+public class TagDAO extends BasicManageDAO<Tag,Long>{
     
 }

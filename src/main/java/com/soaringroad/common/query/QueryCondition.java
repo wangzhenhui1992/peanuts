@@ -1,4 +1,6 @@
-package com.soaringroad.data.query;
+package com.soaringroad.common.query;
+
+import com.soaringroad.common.vo.QueryOptionEnum;
 
 import lombok.Data;
 

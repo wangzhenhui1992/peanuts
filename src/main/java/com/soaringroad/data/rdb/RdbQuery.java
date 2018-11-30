@@ -1,4 +1,4 @@
-package com.soaringroad.data.query;
+package com.soaringroad.data.rdb;
 
 import javax.validation.constraints.NotNull;
 

@@ -27,10 +27,9 @@ import org.springframework.stereotype.Component;
 
 import com.soaringroad.common.PeanutsException;
 import com.soaringroad.common.entity.ElasticSearchEntity;
+import com.soaringroad.common.query.Query;
 import com.soaringroad.common.repository.ElasticSearchRepository;
 import com.soaringroad.common.util.CommonUtils;
-import com.soaringroad.data.query.EsRestQueryBuilder;
-import com.soaringroad.data.query.Query;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -76,7 +75,7 @@ public abstract class AbstractEsRepository<T extends ElasticSearchEntity, E exte
 
     @Override
     public List<T> search(Query entity) {
-        SearchSourceBuilder sourceBuilder = new EsRestQueryBuilder(entity).build();
+        SearchSourceBuilder sourceBuilder = new EsQueryBuilder(entity).build();
         SearchRequest searchRequest = new SearchRequest();
         ElasticsearchIndexDefine indexDefine = define();
         searchRequest.indices(indexDefine.getIndexName()).types(indexDefine.getType()).source(sourceBuilder);
