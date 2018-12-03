@@ -2,7 +2,7 @@ package com.soaringroad.peanuts.dao;
 
 import org.springframework.stereotype.Service;
 
-import com.soaringroad.dao.BasicManageDAO;
+import com.soaringroad.dao.impl.BasicManageDAOImpl;
 import com.soaringroad.peanuts.entity.Article;
 
 /**
@@ -14,6 +14,6 @@ import com.soaringroad.peanuts.entity.Article;
  * @since 2018/11/07
  */
 @Service
-public class ArticleDAO extends BasicManageDAO<Article, Long> {
+public class ArticleDAO extends BasicManageDAOImpl<Article, Long> {
 
 }

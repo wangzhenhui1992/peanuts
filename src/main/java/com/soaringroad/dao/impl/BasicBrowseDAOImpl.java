@@ -1,4 +1,4 @@
-package com.soaringroad.dao;
+package com.soaringroad.dao.impl;
 
 import java.io.Serializable;
 import java.util.List;
@@ -21,7 +21,7 @@ import com.soaringroad.common.util.CommonUtils;
  * @author wangzhenhui1992
  * @since 2018/11/08
  */
-public class BasicBrowseDAO<T extends CommonEntity, E extends Serializable> extends BasicDAO<T, E>
+public class BasicBrowseDAOImpl<T extends CommonEntity, E extends Serializable> extends BasicDAOImpl<T, E>
         implements BrowseDAO<T, E> {
 
     @Autowired(required=false)

@@ -10,11 +10,13 @@ import com.soaringroad.common.entity.CommonEntity;
  * @author wangzhenhui1992
  * @since 2018/11/08
  */
-public interface ManageDAO<T extends CommonEntity, E extends Serializable> extends DAO<T,E>{
+public interface ManageDAO<T extends CommonEntity, E extends Serializable> extends BaseDAO<T,E>{
 
     T update(T entity);
 
     T create(T entity);
 
     T delete(E id);
+    
+    void expire(E id, Long time);
 }

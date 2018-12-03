@@ -15,4 +15,11 @@ import com.soaringroad.peanuts.entity.User;
  */
 @Repository
 public interface UserRepository extends RdbRepository<User, Long> {
+    /**
+     * Check user name and password
+     * @param name user name
+     * @param password password
+     * @return 
+     */
+    User getByNameAndPassword(String name,String password);
 }

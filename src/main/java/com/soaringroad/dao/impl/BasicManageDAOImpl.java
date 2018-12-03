@@ -1,4 +1,4 @@
-package com.soaringroad.dao;
+package com.soaringroad.dao.impl;
 
 import java.io.Serializable;
 import java.util.Optional;
@@ -8,14 +8,14 @@ import com.soaringroad.common.entity.CommonEntity;
 
 /**
  * <pre>
- * Abstract class of {@link ManageDAO} and extends {@link BasicBrowseDAO}
+ * Abstract class of {@link ManageDAO} and extends {@link BasicBrowseDAOImpl}
  * </pre>
  * 
  * @author wangzhenhui1992
  * @since 2018/11/07
  */
-public class BasicManageDAO<T extends CommonEntity, E extends Serializable>
-        extends BasicBrowseDAO<T, E> implements ManageDAO<T, E> {
+public class BasicManageDAOImpl<T extends CommonEntity, E extends Serializable>
+        extends BasicBrowseDAOImpl<T, E> implements ManageDAO<T, E> {
 
     @Override
     public final T update(T entity) {
@@ -33,6 +33,14 @@ public class BasicManageDAO<T extends CommonEntity, E extends Serializable>
     public final T delete(E id) {
         doDelete(id);
         return this.get(id);
+    }
+    
+
+    @Override
+    public void expire(E id, Long time) {
+        if (this.getRedisRepository() != null) {
+            this.getRedisRepository().expire(id, 1000);
+        }
     }
 
     protected T doUpdate(T entity) {

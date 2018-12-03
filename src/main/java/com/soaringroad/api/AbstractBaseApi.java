@@ -15,7 +15,6 @@ import com.soaringroad.api.validator.ApiValidator;
 import com.soaringroad.common.entity.Entity;
 import com.soaringroad.common.query.Query;
 import com.soaringroad.common.util.HttpUtils;
-import com.soaringroad.peanuts.api.ManageApi;
 /**
  * <pre>
  * Base API class

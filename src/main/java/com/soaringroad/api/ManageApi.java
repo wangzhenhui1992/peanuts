@@ -1,4 +1,4 @@
-package com.soaringroad.peanuts.api;
+package com.soaringroad.api;
 
 import java.io.Serializable;
 

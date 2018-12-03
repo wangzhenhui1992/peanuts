@@ -13,7 +13,7 @@ import com.soaringroad.common.repository.RedisRepository;
  * @author wangzhenhui1992
  * @since 2018/11/08
  */
-public interface DAO<T extends CommonEntity, E extends Serializable> {
+public interface BaseDAO<T extends CommonEntity, E extends Serializable> {
     RdbRepository<T,E> getRdbRepository();
     RedisRepository<T,E> getRedisRepository();
     ElasticSearchRepository<T,E> getEsRepository();

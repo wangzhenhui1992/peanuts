@@ -2,7 +2,7 @@ package com.soaringroad.peanuts.dao;
 
 import org.springframework.stereotype.Component;
 
-import com.soaringroad.dao.BasicManageDAO;
+import com.soaringroad.dao.impl.BasicManageDAOImpl;
 import com.soaringroad.peanuts.entity.Comment;
 /**
  * <pre>
@@ -12,5 +12,5 @@ import com.soaringroad.peanuts.entity.Comment;
  * @since 2018/11/08
  */
 @Component
-public class CommentDAO extends BasicManageDAO<Comment,Long>{
+public class CommentDAO extends BasicManageDAOImpl<Comment,Long>{
 }

@@ -14,7 +14,7 @@ import com.soaringroad.common.query.Query;
  * @author wangzhenhui1992
  * @since 2018/11/08
  */
-public interface BrowseDAO<T extends CommonEntity, E extends Serializable> extends DAO<T,E>{
+public interface BrowseDAO<T extends CommonEntity, E extends Serializable> extends BaseDAO<T,E>{
 
     T get(E id);
 

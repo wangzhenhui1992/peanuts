@@ -2,7 +2,7 @@ package com.soaringroad.peanuts.dao;
 
 import org.springframework.stereotype.Component;
 
-import com.soaringroad.dao.BasicManageDAO;
+import com.soaringroad.dao.impl.BasicManageDAOImpl;
 import com.soaringroad.peanuts.entity.Category;
 /**
  * <pre>
@@ -12,5 +12,5 @@ import com.soaringroad.peanuts.entity.Category;
  * @since 2018/11/07
  */
 @Component
-public class CategoryDAO extends BasicManageDAO<Category, Long> {
+public class CategoryDAO extends BasicManageDAOImpl<Category, Long> {
 }

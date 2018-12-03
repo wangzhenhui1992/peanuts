@@ -1,10 +1,10 @@
-package com.soaringroad.dao;
+package com.soaringroad.dao.impl;
 
 import java.io.Serializable;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.soaringroad.common.dao.DAO;
+import com.soaringroad.common.dao.BaseDAO;
 import com.soaringroad.common.entity.CommonEntity;
 import com.soaringroad.common.repository.ElasticSearchRepository;
 import com.soaringroad.common.repository.RdbRepository;
@@ -12,13 +12,13 @@ import com.soaringroad.common.repository.RedisRepository;
 
 /**
  * <pre>
- * Implementation of {@link DAO}
+ * Implementation of {@link BaseDAO}
  * </pre>
  * 
  * @author wangzhenhui1992
  * @since 2018/11/08
  */
-public class BasicDAO<T extends CommonEntity, E extends Serializable> implements DAO<T, E> {
+public class BasicDAOImpl<T extends CommonEntity, E extends Serializable> implements BaseDAO<T, E> {
 
     @Autowired
     private RdbRepository<T, E> rdbRepository;

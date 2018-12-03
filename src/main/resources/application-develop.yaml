@@ -6,6 +6,9 @@ spring:
       ddl-auto: update
     show-sql: true
 peanuts:
+  security:
+    security-key: null
+    login-timeout: -1
   data:
     rdb:
       driver-class-name: com.mysql.jdbc.Driver
@@ -36,8 +39,8 @@ peanuts:
       enabled: true
       username: druid-username
       password: druid-password
-      allow:
-      deny:
+      allow: null
+      deny: null
 logging:
-    level:
-        com.peanuts.community: debug
+  level:
+    com.peanuts.community: debug
