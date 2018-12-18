@@ -1,6 +1,7 @@
 [![License](https://img.shields.io/badge/license-Apache%202-brightgreen.svg)](https://github.com/wangzhenhui1992/peanuts/blob/master/LICENSE)
 [![buddy pipeline](https://app.buddy.works/wangzhenhui1992-1/peanuts/pipelines/pipeline/154004/badge.svg?token=b7331631676aff048d52e85732235017aefb152c7c1a6b0afd60fd08b7b2df46 "buddy pipeline")](https://app.buddy.works/wangzhenhui1992-1/peanuts/pipelines/pipeline/154004)
 [![Slack](https://img.shields.io/badge/slack-peanuts--community-green.svg)](https://join.slack.com/t/peanuts-community/shared_invite/enQtNDQ5MzE1ODg3NzM0LTRiNDRhYTIyMmFmZWRiNWE2Nzk4MzBmZGYyZWNlY2Y0ODRkM2U0OWIxMTI2ZmJjY2FlNjQ4NzNjMDllMjM1MTE)
+[![QQGroup](https://img.shields.io/badge/qq群-912824121-green.svg)](//shang.qq.com/wpa/qunwpa?idkey=ab353dc4dd8143c22706243b43319c0a068be2ef0ba971a4ff6905cee5f5f4fe)
 
 ```
 |  _ \ ___  __ _ _ __  _   _| |_ ___ 
