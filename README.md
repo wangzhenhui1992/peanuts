@@ -42,3 +42,62 @@ It is still under development but joining is always welcome.This repository is j
 ### IDE
 - [SpringToolSuit](http://spring.io/tools)
 
+
+# Packages of Project
+### com.soaringroad.api  API Module
+define interfaces and abstract classes of apis
+##### com.soaringroad.api.validate 
+define the interface of validators which are used to check the parameters of apis
+
+### com.soaringroad.common Common Module
+define classes with common functions
+##### com.soaringroad.common.config
+define common configuration for springboot
+##### com.soaringroad.common.dao
+define interface of DAOs
+##### com.soaringroad.common.entity
+define interfaces of entities
+##### com.soaringroad.common.query
+define classes related to query which is used to execute search 
+##### com.soaringroad.common.repository
+define interfaces of repositories
+##### com.soaringroad.common.util
+define utility classes with common functions
+##### com.soaringroad.common.vo
+define VOs especially enums
+
+### com.soaringroad.dao DAO Module
+##### com.soaringroad.dao.aggregation
+define interface of aggregation which is used to do an aggregation to data
+##### com.soaringroad.dao.impl
+define implemented classes of basic DAOs.
+
+### com.soaringroad.data Data Modlue
+define classes related to lower level of datasources.
+##### com.soaringroad.data.es
+define classes related to Elasticsearch including configuration,repository,client and etc
+##### com.soaringroad.data.rdb
+define classes related to Elasticsearch including configuration,repository,client and etc
+##### com.soaringroad.data.redis
+define classes related to Redis including configuration,repository and etc
+##### com.soaringroad.data.rdb
+define classes related to Rdb including configuration,repository,druid and etc
+
+### com.soaringroad.peanuts Peanuts Biz Module
+##### com.soaringroad.peanuts.api
+peanuts biz apis
+##### com.soaringroad.peanuts.dao
+peanuts biz DAOs
+##### com.soaringroad.peanuts.dao.aggregation
+peanuts biz aggreations of DAOs
+##### com.soaringroad.peanuts.entity
+peanuts biz entites
+##### com.soaringroad.peanuts.repository
+peanuts biz repository
+##### com.soaringroad.peanuts.service
+peanuts biz interfaces of services
+##### com.soaringroad.peanuts.service.impl
+peanuts biz implemented services
+##### com.soaringroad.peanuts.vo
+peanuts biz VO
+
